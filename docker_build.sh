@@ -22,7 +22,11 @@
 
 set -xe
 
-CONTEXT=$HOME/context
+CONTEXT=$1
+
+if [ -z "$1" ]; then
+  CONTEXT=$HOME/context
+fi
 
 version=$("$CONTEXT"/xsim/bin/xvhdl -version)
 

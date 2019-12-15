@@ -20,14 +20,14 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-FROM ubuntu:19.04
+FROM ubuntu:18.04
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update -qq                                                          && \
-    apt-get install -qq --no-install-recommends libtinfo5=6.1+20181013-2ubuntu2 && \
-    apt-get clean                                                               && \
-    apt-get autoclean                                                           && \
+RUN apt-get update -qq                                                       && \
+    apt-get install -qq --no-install-recommends libtinfo5=6.1-1ubuntu1.18.04 && \
+    apt-get clean                                                            && \
+    apt-get autoclean                                                        && \
     rm -rf /var/lib/apt/lists/*
 
 # Copy context
